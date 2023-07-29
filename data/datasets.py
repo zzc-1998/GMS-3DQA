@@ -222,15 +222,3 @@ class QMM_Dataset(torch.utils.data.Dataset):
     def __len__(self):
         return len(self.image_infos)
 
-if __name__ == '__main__':
-    # test the dataloader and save the QMM
-    dataset = QMM_Dataset(csv_file='test.csv',data_prefix='path-to-projections',phase='test',img_length_read = 6)
-    daloloader = torch.utils.data.DataLoader(dataset,batch_size=8)
-    mean = torch.FloatTensor([123.675, 116.28, 103.53]*224)
-    std = torch.FloatTensor([58.395, 57.12, 57.375])
-    for i,d in enumerate(daloloader):
-        img = d['image'][0][0]
-        for t,m,s in zip(img,mean,std):
-            t.mul_(s).add_(m)
-        torchvision.utils.save_image(img/255,'QMM.png')
-        break 
