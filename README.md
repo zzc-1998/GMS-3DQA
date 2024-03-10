@@ -34,7 +34,7 @@ The file structure is like:
 ```
 
 Then use `train.sh' to conduct your own training !
-
+The pretrained `swin_tiny_patch4_window7_224_22k.pth' can be downloaded at [here](https://1drv.ms/u/s!AjaDoj_-yWgggttCGTboscTuOExeVQ?e=ECpGtR).
 ## Citation
 If you find our work useful, please give us star and cite our paper as:
 ```
